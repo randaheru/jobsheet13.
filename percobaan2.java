@@ -1,8 +1,5 @@
-import java.util.Scanner;
-
 public class percobaan2 {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Masukkan bilangan: ");
@@ -12,7 +9,9 @@ public class percobaan2 {
         int pangkat = sc.nextInt();
 
         int hasilPangkat = hitungPangkat(bilangan, pangkat);
-        System.out.println("Hasil " + bilangan + " pangkat " + pangkat + " adalah: " + hasilPangkat);
+        System.out.print("Hasil " + bilangan + " pangkat " + pangkat + " adalah: ");
+        printPangkatSeries(bilangan, pangkat);
+        System.out.println(" = " + hasilPangkat);
 
         sc.close();
     }
@@ -23,5 +22,12 @@ public class percobaan2 {
         } else {
             return base * hitungPangkat(base, exponent - 1);
         }
+    }
+
+    public static void printPangkatSeries(int base, int exponent) {
+        for (int i = 1; i < exponent; i++) {
+            System.out.print(base + "x");
+        }
+        System.out.print(base);
     }
 }
